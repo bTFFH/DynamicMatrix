@@ -1,0 +1,6 @@
+I:\wea\progs\C#\DynamicMatrix\DynamicMatrix\bin\Debug\DynamicMatrix.dll
+I:\wea\progs\C#\DynamicMatrix\DynamicMatrix\bin\Debug\DynamicMatrix.pdb
+I:\wea\progs\C#\DynamicMatrix\DynamicMatrix\obj\Debug\DynamicMatrix.csprojAssemblyReference.cache
+I:\wea\progs\C#\DynamicMatrix\DynamicMatrix\obj\Debug\DynamicMatrix.csproj.CoreCompileInputs.cache
+I:\wea\progs\C#\DynamicMatrix\DynamicMatrix\obj\Debug\DynamicMatrix.dll
+I:\wea\progs\C#\DynamicMatrix\DynamicMatrix\obj\Debug\DynamicMatrix.pdb
