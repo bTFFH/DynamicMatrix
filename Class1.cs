@@ -9,7 +9,6 @@ namespace DynamicMatrix
     public class DynMatr<T>
     {
         public List<List<T>> lst = new List<List<T>>();
-        private T returner =
 
 
         public DynMatr(int i, int j)
@@ -22,89 +21,13 @@ namespace DynamicMatrix
             if (j < 1)
                 j = 1;
 
-            switch (type)
-            {
-                case "Int16":
-                    Adder(i, j, 0);
-                    break;
-                case "Int32":
-                    Adder(i, j, 0);
-                    break;
-                case "Int64":
-                    Adder(i, j, 0);
-                    break;
-                case "UInt16":
-                    Adder(i, j, 0);
-                    break;
-                case "UInt32":
-                    Adder(i, j, 0);
-                    break;
-                case "UInt64":
-                    Adder(i, j, 0);
-                    break;
-                case "Double":
-                    Adder(i, j, 0);
-                    break;
-                case "Single":
-                    Adder(i, j, 0);
-                    break;
-                case "Byte":
-                    Adder(i, j, 0);
-                    break;
-                case "SByte":
-                    Adder(i, j, 0);
-                    break;
-                case "String":
-                    Adder(i, j, "");
-                    break;
-                case "Char":
-                    Adder(i, j, '');
-                    break;
-                case "Decimal":
-                    Adder(i, j, 0);
-                    break;
-                case "Boolean":
-                    Adder(i, j, false);
-                    break;
-                default:
-                    Adder(i, j, null);
-                    break;
-            }
-            /*for (int row = 0; row < i; row++)
-            {
-                lst.Add(new List<T>());
-                for (int col = 0; col < j; col++)
-                    lst[row].Add();
-                        
-                }*/
-            /*
-            * Int32
-            * Int16
-            * Int64
-            * UInt32
-            * UInt16
-            * UInt64
-            * Double
-            * Byte
-            * SByte
-            * String
-            * Decimal
-            * Boolean
-            * Single
-            * Char
-            */    
-        }
-
-
-        public void Adder(int i, int j, object el)
-        {
             for (int row = 0; row < i; row++)
             {
                 lst.Add(new List<T>());
                 for (int col = 0; col < j; col++)
-                    lst[row].Add((T)el);
-
-            }
+                    lst[row].Add(default(T));
+                        
+                }    
         }
 
 
@@ -115,13 +38,13 @@ namespace DynamicMatrix
                 if (row < 0 || row >= CountRow)
                 {
                     Console.WriteLine("Row index out of range");
-                    return returner;
+                    return default(T);
                 }
                 else
                     if (col < 0 || col >= CountColumn)
                 {
                     Console.WriteLine("Column index out of range");
-                    return returner;
+                    return default(T);
                 }
                 else
                     return lst[row][col];
@@ -153,7 +76,7 @@ namespace DynamicMatrix
                     if (i < 0 || i >= CountRow)
                     {
                         Console.WriteLine("Index out of range");
-                        return "-1";
+                        return default(T).ToString();
                     }
                     else
                         return string.Join(" ", lst[i]);
@@ -163,7 +86,7 @@ namespace DynamicMatrix
                     if (i < 0 || i >= CountColumn)
                     {
                         Console.WriteLine("Index out of range");
-                        return "-1";
+                        return default(T).ToString();
                     }
                     else
                     {
@@ -186,7 +109,7 @@ namespace DynamicMatrix
             lst.Add(new List<T>());
 
             for (int col = 0; col < CountColumn; col++)
-                lst[CountRow - 1].Add(0);
+                lst[CountRow - 1].Add(default(T));
         }
 
 
@@ -203,7 +126,7 @@ namespace DynamicMatrix
                     lst[CountRow - 1][col] = arr[col];
 
                 for (int col = arr.Length; col < lst[0].Count; col++)
-                    lst[CountRow - 1][col] = 0;
+                    lst[CountRow - 1][col] = default(T);
             }
         }
 
@@ -211,7 +134,7 @@ namespace DynamicMatrix
         public void AddColumn()
         {
             for (int row = 0; row < CountRow; row++)
-                lst[row].Add(0);
+                lst[row].Add(default(T));
         }
 
 
@@ -226,7 +149,7 @@ namespace DynamicMatrix
                     lst[row].Add(arr[row]);
 
                 for (int row = arr.Length; row < CountRow; row++)
-                    lst[row].Add(0);
+                    lst[row].Add(default(T));
             }
         }
 
@@ -244,8 +167,8 @@ namespace DynamicMatrix
             }
             else
             {
-                lst[row][col] = 0;
-                Console.WriteLine("Element at ({0},{1}) became Zero", row, col);
+                lst[row][col] = default(T);
+                Console.WriteLine("Element at ({0},{1}) became {2}", row, col, default(T));
             }
         }
 
